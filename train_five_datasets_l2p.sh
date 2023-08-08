@@ -21,3 +21,5 @@ python -m torch.distributed.launch \
         --batch-size 16 \
         --data-path /local_datasets/ \
         --output_dir ./output 
+
+

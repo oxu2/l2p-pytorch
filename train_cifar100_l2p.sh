@@ -21,3 +21,18 @@ python -m torch.distributed.launch \
         --batch-size 16 \
         --data-path /local_datasets/ \
         --output_dir ./output 
+
+CUDA_VISIBLE_DEVICES=3 nohup python -m torch.distributed.launch \
+        --nproc_per_node=1 \
+        --use_env main.py \
+        cifar100_l2p \
+        --model vit_base_patch16_224 \
+        --batch-size 16 \
+        --data-path /people/cs/o/oxx220000/data \
+        --output_dir ./output \
+        > out.log   2>&1 &
+
+
+        tail -f out.log
+
+
